@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Search & Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4 text-white">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">HealthFinder</a>
+            <div class="space-x-4">
+                <a href="#medicines" class="hover:text-blue-300">Medicines</a>
+                <a href="#doctors" class="hover:text-blue-300">Doctors</a>
+                <a href="#appointments" class="hover:text-blue-300">Appointments</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-blue-200 py-16">
+        <div class="text-center">
+            <h1 class="text-4xl font-semibold mb-4">Find Medicines and Doctors Easily</h1>
+            <p class="text-lg mb-8">Search for medicines, learn about them, and book doctor appointments seamlessly.</p>
+        </div>
+    </section>
+
+    <!-- Medicines Search -->
+    <section id="medicines" class="max-w-7xl mx-auto py-16">
+        <h2 class="text-3xl font-semibold mb-6 text-center">Search for Medicines</h2>
+        <div class="flex justify-center mb-8">
+            <input type="text" id="medicine-search" placeholder="Enter medicine name..." class="p-3 w-1/2 rounded-lg shadow-md" />
+            <button onclick="searchMedicines()" class="ml-4 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700">Search</button>
+        </div>
+
+        <div id="medicine-results" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+    </section>
+
+    <!-- Doctors Search -->
+    <section id="doctors" class="max-w-7xl mx-auto py-16">
+        <h2 class="text-3xl font-semibold mb-6 text-center">Search for Doctors</h2>
+        <div class="flex justify-center mb-8">
+            <input type="text" id="doctor-specialty" placeholder="Specialty..." class="p-3 w-1/3 rounded-lg shadow-md" />
+            <input type="text" id="doctor-location" placeholder="Location..." class="p-3 w-1/3 rounded-lg shadow-md ml-4" />
+            <button onclick="searchDoctors()" class="ml-4 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700">Search</button>
+        </div>
+
+        <div id="doctor-results" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+    </section>
+
+    <!-- Appointment Booking -->
+    <section id="appointments" class="max-w-7xl mx-auto py-16 bg-gray-200">
+        <h2 class="text-3xl font-semibold mb-6 text-center">Book an Appointment</h2>
+        <div id="appointment-form" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+            <form>
+                <label for="doctor-select" class="block text-lg font-medium">Select Doctor</label>
+                <select id="doctor-select" class="w-full p-3 rounded-lg mb-4">
+                    <!-- Options will be populated dynamically -->
+                </select>
+
+                <label for="appointment-date" class="block text-lg font-medium">Select Date</label>
+                <input type="date" id="appointment-date" class="w-full p-3 rounded-lg mb-4" />
+
+                <label for="appointment-time" class="block text-lg font-medium">Select Time</label>
+                <input type="time" id="appointment-time" class="w-full p-3 rounded-lg mb-4" />
+
+                <button type="submit" class="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Book Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
